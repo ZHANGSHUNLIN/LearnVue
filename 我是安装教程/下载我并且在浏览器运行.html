@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>安装node.js</title>
+		<style type="text/css">
+			p {
+				font-size: 18px;
+			}
+
+			.imgContainer {
+				width: 60%;
+				position: absolute;
+				left: 20%;
+				top: 0px;
+				z-index: 100;
+			}
+
+			img {
+				width: 100%;
+				height: 60%;
+				border: 2px red solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="margin-left: 30px;z-index: 1;">
+			<h1>这里是前置教程</h1>
+			<h2>我是目录</h2>
+			<ol>
+				<li><a href="#innode">安装node.js</a></li>
+				<li><a href="#pzhj">环境的配置</a></li>
+				<li><a href="#invue">安装VUE</a></li>
+				<li><a href="#invuecli">安装VUE-CLI</a></li>
+				<li><a href="#createp">创建项目</a></li>
+			</ol>
+
+
+			<hr>
+			<p>node.js的本质相当于一个类似与Tomcat的东东，也就是一个http服务器，原因：node把Chrome的V8 JS引擎封装起来了</p>
+			<h3 id="innode">1.安装node.js：</h3>
+			<p>在百度上面直接node就可以了第一个就是node.js的中文官网进去就按下图的箭头顺序点击即可。安装傻瓜式安装点完即可</p>
+			<a href="javascript:openImg('img/01.png')">查看截图</a>
+			<p>然后我们只需要打开cmd命令行，运行 node -v 测试安装 即可</p>
+			<a href="javascript:openImg('img/02.png')">查看截图</a>
+			<h3 id="pzhj">2.环境的配置：</h3>
+			<p>node的默认环境为<span style="color: red;">国外服务器</span>，看到国外服务器就能感觉的到运行的速度很超级的慢，所以我们提供了一个<span style="color: blue;">国内服务器，下面配置国内淘宝的镜像服务</span></p>
+			<p>在cmd中 <span onclick="copyText(this)" style="color: aqua;">npm install -g cnpm
+					--registry=https://registry.npm.taobao.org</span> 即可（下载资源用的）</p>
+			<p style="color: yellow;">下面所有的npm都可以用cnpm 自行替换即可 也可以不用按照个人的喜好</p>
+			<a href="javascript:openImg('img/03.png')">查看截图</a>
+			<h3 id="invue">3.安装VUE：</h3>
+			<p>安装过cnpm之后就可以用cnpm了，也可以用npm 但是npm的速度超级慢。</p>
+			<p>我们使用cnpm info vue 或者 npm info vue 就可以查看我们可以安装的vue的版本了</p>
+			<a href="javascript:openImg('img/04.png')">查看截图</a>
+			<p>我们使用 cnpm install vue来安装vue ，注意 cnpm能干的事npm都可以。 我们也可以使用 cnpm install vue#xxx xxx为版本号来安装不同的版本</p>
+			<a href="javascript:openImg('img/05.png')">查看截图</a>
+			<h3 id="invuecli">4.安装VUE-CLI（创建vue项目用的工具）：</h3>
+			<p>我们使用xue有两种方法一种是直接使用script src的方式，另外一种就是这次讲的第一种不讲</p>
+			<p>vue的项目相对来说挺复杂的，如果你使用的是HbuildrX的话可以直接创建，省略该步骤</p>
+			<p>安装vue-cli 很简单和上述安装方式一样<span onclick="copyText(this)" style="color: aqua;">npm uninstall vue-cli -g</span> 即可</p>
+			<a href="javascript:openImg('img/06.png')">查看截图</a>
+			<p>截图没有丢 截图在最上面，由于我安装过我再次安装就提示这了~</p>
+			<h3 id="createp">5.创建项目：</h3>
+			<p>创建项目我们使用的是vue的cli，使用HbuliderX的请忽略，这里只是简单的创建，更高深的可以看官网，也可以度娘</p>
+			<p>创建也是沙雕式的创建，<span onclick="copyText(this)" style="color: aqua;">vue create hello-world</span>（需要等很长时间，可能是我的电脑不好）
+				就会创建一个叫hello-world的vue项目了</p>
+			<a href="javascript:openImg('img/07.png')">查看截图</a>
+			<p>这是里面的目录结构：</p>
+			<ul>
+				<li>
+					<p>node_modules</p>
+					<p style="color: #3A33D1;">↑：这里都是node下载的资源主要有vue的代码，如果在开发的时候需要用，bootstrap的话安装后也会下载到这里面，但是一般情况下不会吧这个玩意上传到git上，因为费流量</p>
+				</li>
+				<li>
+					<p>public</p>
+				</li>
+				<li>
+					<p>src</p>
+				</li>
+				<li>
+					<p>.gitignore</p>
+				</li>
+				<li>
+					<p>babel.config.js</p>
+				</li>
+				<li>
+					<p>package.json</p>
+				</li>
+				<li>
+					<p>package-lock.json</p>
+				</li>
+				<li>
+					<p>README.md</p>
+				</li>
+			</ul>
+			<a href="javascript:openImg('img/08.png')" onclick="javascript:alert('截图在上面')">查看截图</a>
+			<h2>注意：</h2>
+			<p>当我们拿到一个别人的VUE项目的时候我们需要把该项目的资源，也就是下载的资源初始化成自己的学要执行该命令：</p>
+			<p>在cmd中并且在项目的根目录内 <span onclick="copyText(this)" style="color: aqua;">npm install</span> 就可以用了</p>
+
+		</div>
+
+
+		<h1>教程卒</h1>
+		<div style="z-index: 100;display: none;" class="imgContainer">
+			<img id="imging" alt="图片去死了...">
+			<span style="font-size: 28px;">再次点击关闭</span>
+		</div>
+		<script type="text/javascript">
+			function openImg(srcs) {
+				var img = document.getElementById("imging");
+				img.src = srcs;
+				img.parentElement.style.display = 'block';
+
+				var listen = addEventListener('click', function() {
+					img.parentElement.style.display = 'none';
+				});
+
+			}
+
+			function copyText(e) {
+				let range = document.createRange();
+				range.selectNode(e);
+				window.getSelection().removeAllRanges();
+				window.getSelection().addRange(range);
+				document.execCommand('copy');
+				window.getSelection().removeAllRanges();
+				alert("复制成功！")
+			}
+		</script>
+	</body>
+</html>
